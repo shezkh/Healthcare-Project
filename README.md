@@ -38,8 +38,8 @@ The dataset for this project can be accessed [here]([Dataset_Link](https://drive
 
 ### Feature Description
 
-| Bucket | Variable | Variable Description |
-|--------|----------|---------------------|
+| Bucket | Variable |
+|--------|----------|
 | 1 Unique Row Id | Patient ID |
 | 1 Target Variable | Persistency_Flag |
 | 5 Demographics | Age, Gender, Region, Race, Ethnicity |
@@ -47,3 +47,7 @@ The dataset for this project can be accessed [here]([Dataset_Link](https://drive
 | 3 Physician Attributes | NTM - Physician Specialty |
 | 13 Clinical Factors | NTM - T-Score, DEXA Scans, Fragility Fracture, Glucocorticoids |
 | 45 Disease/Treatment factors Factors | NTM - Risks, Comorbidities, Concomitant drugs | 
+
+### Model Evaluation
+
+![image](https://github.com/Ashish-Sasna/Healthcare-Project/assets/96835311/b98b7458-323f-4089-8e91-2f0d4e5a2bb5)
