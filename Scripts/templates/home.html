@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Healthcare</title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <h1>Healthcare: Persistency Prediction</h1>
+        <div class="note-container">
+            <b>NOTE:</b> All values should be either 'Y' or 'N'.<br> 
+            <i>DEXA Scan</i> takes integer value.
+        </div>
+        <br>
+        <div class="container">
+            <div class="result" id="predictionResult">
+                {{ prediction_result }}
+            </div>
+            <div class="predict">
+                <form action="/predict" method="POST">
+   
+                    <i>Comorbidity long-term drug therapy</i> <input type="text" name="comorb_long_term_current_drug_therapy" placeholder="comorb_long_term_current_drug_therapy" value="{{ request.form['comorb_long_term_current_drug_therapy'] if 'comorb_long_term_current_drug_therapy' in request.form else '' }}" required="required" />
+                    
+                    <i>Comorbidity encounter for screening for Malignant Neoplasms</i> <input type="text" name="comorb_encounter_for_screening_for_malignant_neoplasms" placeholder="comorb_encounter_for_screening_for_malignant_neoplasms" value="{{ request.form['comorb_encounter_for_screening_for_malignant_neoplasms'] if 'comorb_encounter_for_screening_for_malignant_neoplasms' in request.form else '' }}" required="required" />
+                    
+                    <i>Comorbidity encounter for general exam</i> <input type="text" name="comorb_encntr_for_general_exam_w_o_complaint,_susp_or_reprtd_dx" placeholder="comorb_encntr_for_general_exam_w_o_complaint,_susp_or_reprtd_dx" value="{{ request.form['comorb_encntr_for_general_exam_w_o_complaint,_susp_or_reprtd_dx'] if 'comorb_encntr_for_general_exam_w_o_complaint,_susp_or_reprtd_dx' in request.form else '' }}" required="required" />
+                    
+                    <i>Recurring falls</i> <input type="text" name="risk_recurring_falls" placeholder="risk_recurring_falls" value="{{ request.form['risk_recurring_falls'] if 'risk_recurring_falls' in request.form else '' }}" required="required" />
+                    
+                    <i>Immobilization</i> <input type="text" name="risk_immobilization" placeholder="risk_immobilization" value="{{ request.form['risk_immobilization'] if 'risk_immobilization' in request.form else '' }}" required="required" />
+                    
+                    <i>Gluco record</i> <input type="text" name="gluco_record_prior_ntm" placeholder="gluco_record_prior_ntm" value="{{ request.form['gluco_record_prior_ntm'] if 'gluco_record_prior_ntm' in request.form else '' }}" required="required" />
+                    
+                    <i>Poor health frailty</i> <input type="text" name="risk_poor_health_frailty" placeholder="risk_poor_health_frailty" value="{{ request.form['risk_poor_health_frailty'] if 'risk_poor_health_frailty' in request.form else '' }}" required="required" />
+                    
+                    <i>Type 1 insulin dependent diabetes</i> <input type="text" name="risk_type_1_insulin_dependent_diabetes" placeholder="risk_type_1_insulin_dependent_diabetes" value="{{ request.form['risk_type_1_insulin_dependent_diabetes'] if 'risk_type_1_insulin_dependent_diabetes' in request.form else '' }}" required="required" />
+                    
+                    <i>Concomitant Viral Vaccines</i> <input type="text" name="concom_viral_vaccines" placeholder="concom_viral_vaccines" value="{{ request.form['concom_viral_vaccines'] if 'concom_viral_vaccines' in request.form else '' }}" required="required" />
+                    
+                    <i>Vitamin D deficiency</i> <input type="text" name="comorb_vitamin_d_deficiency" placeholder="comorb_vitamin_d_deficiency" value="{{ request.form['comorb_vitamin_d_deficiency'] if 'comorb_vitamin_d_deficiency' in request.form else '' }}" required="required" />
+					
+					<i>Bone density and structure disorder</i> <input type="text" name="comorb_other_disorders_of_bone_density_and_structure" placeholder="comorb_other_disorders_of_bone_density_and_structure" value="{{ request.form['comorb_other_disorders_of_bone_density_and_structure'] if 'comorb_other_disorders_of_bone_density_and_structure' in request.form else '' }}" required="required" />
+					
+					<i>DEXA Scans</i> <input type="text" name="dexa_freq_during_rx_bc" placeholder="dexa_freq_during_rx_bc" value="{{ request.form['dexa_freq_during_rx_bc'] if 'dexa_freq_during_rx_bc' in request.form else '' }}" required="required" />
+					
+					<i>Untreated chronic hypogonadism</i> <input type="text" name="risk_untreated_chronic_hypogonadism" placeholder="risk_untreated_chronic_hypogonadism" value="{{ request.form['risk_untreated_chronic_hypogonadism'] if 'risk_untreated_chronic_hypogonadism' in request.form else '' }}" required="required" />
+					
+					<i>Systemic Corticosteroids plain</i> <input type="text" name="concom_systemic_corticosteroids_plain" placeholder="concom_systemic_corticosteroids_plain" value="{{ request.form['concom_systemic_corticosteroids_plain'] if 'concom_systemic_corticosteroids_plain' in request.form else '' }}" required="required" />
+                    
+                    <br>
+                    <button type="submit">Predict</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
