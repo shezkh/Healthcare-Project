@@ -40,14 +40,10 @@ The dataset for this project can be accessed [here]([Dataset_Link](https://drive
 
 | Bucket | Variable | Variable Description |
 |--------|----------|---------------------|
-| Unique Row Id | Patient ID | Unique ID of each patient |
-| Target Variable | Persistency_Flag | Flag indicating if a patient was persistent or not |
-| Demographics | Age | Age of the patient during their therapy |
-| Race | Race of the patient from the patient table |
-| Region | Region of the patient from the patient table |
-| Ethnicity | Ethnicity of the patient from the patient table |
-| Gender | Gender of the patient from the patient table |
-| IDN Indicator | Flag indicating patients mapped to IDN |
-| Provider Attributes | NTM - Physician Specialty | Specialty of the HCP that prescribed the NTM Rx |
-| Clinical Factors | NTM - T-Score | T Score of the patient at the time of the NTM Rx (within 2 years prior from rxdate) |
-*The list continues further*
+| 1 Unique Row Id | Patient ID |
+| 1 Target Variable | Persistency_Flag |
+| 5 Demographics | Age, Gender, Region, Race, Ethnicity |
+| 1 IDN Indicator | Flag indicating patients mapped to IDN |
+| 3 Physician Attributes | NTM - Physician Specialty |
+| 13 Clinical Factors | NTM - T-Score, DEXA Scans, Fragility Fracture, Glucocorticoids |
+| 45 Disease/Treatment factors Factors | NTM - Risks, Comorbidities, Concomitant drugs | 
